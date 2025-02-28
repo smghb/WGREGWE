@@ -12,6 +12,49 @@
         body {
             font-family: 'Noto Serif SC', serif;
         }
+
+        /* 动画：滑动图片并显示详细信息 */
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product-card:hover img {
+            transform: translateX(-100%) scale(1.2);
+        }
+
+        .product-details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            padding: 20px;
+            transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+            transform: translateY(20px);
+        }
+
+        .product-card:hover .product-details {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: opacity 0.3s ease-in-out, visibility 0s 0s;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -31,142 +74,90 @@
         </div>
     </header>
 
-    <!-- 首屏大图 -->
-    <section id="home" class="relative w-full h-screen bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/8332326/pexels-photo-8332326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-        <div class="absolute inset-0 bg-black opacity-50 flex items-center justify-center text-white text-4xl font-bold">
-            <h1>源泽农业科技</h1>
-        </div>
-    </section>
-
     <!-- 产品展示 -->
     <section id="products" class="py-12 bg-white">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-6">我们的产品</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 小米 -->
-                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('xiaomi')">
-                    <img src="xiaomi.jpg" alt="小米" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">小米</h3>
-                        <p class="text-gray-600">健康营养，口感独特，适合各类食谱。</p>
+                <div class="product-card group bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="xiaomi.jpg" alt="小米">
+                    <div class="product-details">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2">小米</h3>
+                            <p class="text-gray-200">健康营养，口感独特，适合各类食谱。</p>
+                            <p class="text-gray-200"><strong>地理位置：</strong>广泛种植于中国北方地区。</p>
+                            <p class="text-gray-200"><strong>营养价值：</strong>富含蛋白质、纤维、矿物质和维生素。</p>
+                        </div>
                     </div>
                 </div>
                 <!-- 大米 -->
-                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('dami')">
-                    <img src="dami.jpg" alt="大米" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">大米</h3>
-                        <p class="text-gray-600">富含淀粉，口感细腻，适合多种烹饪方式。</p>
+                <div class="product-card group bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="dami.jpg" alt="大米">
+                    <div class="product-details">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2">大米</h3>
+                            <p class="text-gray-200">富含淀粉，口感细腻，适合多种烹饪方式。</p>
+                            <p class="text-gray-200"><strong>地理位置：</strong>产自中国南方，适应温暖湿润的气候。</p>
+                            <p class="text-gray-200"><strong>营养价值：</strong>富含淀粉，提供丰富的能量。</p>
+                        </div>
                     </div>
                 </div>
                 <!-- 大黄米 -->
-                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('dahuangmi')">
-                    <img src="dahuangmi.jpg" alt="大黄米" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">大黄米</h3>
-                        <p class="text-gray-600">富含营养，适合粥类和蒸米饭。</p>
+                <div class="product-card group bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="dahuangmi.jpg" alt="大黄米">
+                    <div class="product-details">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2">大黄米</h3>
+                            <p class="text-gray-200">富含营养，适合粥类和蒸米饭。</p>
+                            <p class="text-gray-200"><strong>地理位置：</strong>主要种植在中国东北地区。</p>
+                            <p class="text-gray-200"><strong>营养价值：</strong>富含矿物质和蛋白质。</p>
+                        </div>
                     </div>
                 </div>
                 <!-- 花生 -->
-                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('huasheng')">
-                    <img src="huasheng.jpg" alt="花生" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">花生</h3>
-                        <p class="text-gray-600">富含植物脂肪，适合做零食或添加到菜肴中。</p>
+                <div class="product-card group bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="huasheng.jpg" alt="花生">
+                    <div class="product-details">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2">花生</h3>
+                            <p class="text-gray-200">富含植物脂肪，适合做零食或添加到菜肴中。</p>
+                            <p class="text-gray-200"><strong>地理位置：</strong>广泛种植于中国南方。</p>
+                            <p class="text-gray-200"><strong>营养价值：</strong>富含不饱和脂肪酸和蛋白质。</p>
+                        </div>
                     </div>
                 </div>
                 <!-- 瓜子 -->
-                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('guazi')">
-                    <img src="guazi.jpg" alt="瓜子" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">瓜子</h3>
-                        <p class="text-gray-600">营养丰富，适合日常零食。</p>
+                <div class="product-card group bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="guazi.jpg" alt="瓜子">
+                    <div class="product-details">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2">瓜子</h3>
+                            <p class="text-gray-200">营养丰富，适合日常零食。</p>
+                            <p class="text-gray-200"><strong>地理位置：</strong>主要产于中国东北地区。</p>
+                            <p class="text-gray-200"><strong>营养价值：</strong>富含维生素E和多种矿物质。</p>
+                        </div>
                     </div>
                 </div>
                 <!-- 藜麦 -->
-                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('limai')">
-                    <img src="limai.jpg" alt="藜麦" class="w-full h-56 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">藜麦</h3>
-                        <p class="text-gray-600">高蛋白，富含氨基酸，是理想的超食品。</p>
+                <div class="product-card group bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="limai.jpg" alt="藜麦">
+                    <div class="product-details">
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2">藜麦</h3>
+                            <p class="text-gray-200">高蛋白，富含氨基酸，是理想的超食品。</p>
+                            <p class="text-gray-200"><strong>地理位置：</strong>主要种植在中国西北地区。</p>
+                            <p class="text-gray-200"><strong>营养价值：</strong>富含蛋白质、矿物质，适合健康饮食。</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 产品详细介绍模态框 -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-        <div class="bg-white p-6 rounded-lg max-w-lg w-full">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-xl text-gray-500">×</button>
-            <h3 id="modal-title" class="text-2xl font-semibold mb-4">产品详细介绍</h3>
-            <div id="modal-content">
-                <!-- 这里将动态填充产品的详细信息 -->
-            </div>
-        </div>
-    </div>
-
-    <!-- 证书部分 -->
-    <section id="certificates" class="py-12 bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-6">我们的证书</h2>
-            <p class="text-lg text-gray-700">我们的产品已经通过了多项质量认证，并获得了业内的广泛认可。</p>
-        </div>
-    </section>
-
-    <!-- 联系方式 -->
-    <footer class="bg-green-700 text-white p-6">
-        <div class="container mx-auto text-center">
-            <p class="text-lg">联系我们：<a href="mailto:contact@yuanzeng.com" class="hover:underline" id="email-copy">contact@yuanzeng.com</a></p>
-            <p class="text-sm mt-4">© 2025 源泽农业科技发展有限公司</p>
-        </div>
-    </footer>
-
     <!-- JavaScript -->
     <script>
-        // 打开模态框并填充内容
-        function openModal(product) {
-            let modalTitle = document.getElementById('modal-title');
-            let modalContent = document.getElementById('modal-content');
-            
-            const productDetails = {
-                xiaomi: {
-                    title: "小米",
-                    content: "<p><strong>地理位置：</strong>广泛种植于中国北方地区。</p><p><strong>营养价值：</strong>富含蛋白质、纤维、矿物质和维生素。适合各种食谱，健康营养。</p>"
-                },
-                dami: {
-                    title: "大米",
-                    content: "<p><strong>地理位置：</strong>产自中国南方，适应温暖湿润的气候。</p><p><strong>营养价值：</strong>富含淀粉，提供丰富的能量。适合多种烹饪方式。</p>"
-                },
-                dahuangmi: {
-                    title: "大黄米",
-                    content: "<p><strong>地理位置：</strong>大黄米主要种植在中国东北地区。</p><p><strong>营养价值：</strong>富含矿物质、蛋白质，特别适合做粥和蒸米饭。</p>"
-                },
-                huasheng: {
-                    title: "花生",
-                    content: "<p><strong>地理位置：</strong>广泛种植于中国南方，阳光充足的环境中。</p><p><strong>营养价值：</strong>富含植物脂肪、蛋白质和多种维生素。可作为零食或添加到菜肴中。</p>"
-                },
-                guazi: {
-                    title: "瓜子",
-                    content: "<p><strong>地理位置：</strong>主要产于中国东北地区。</p><p><strong>营养价值：</strong>富含维生素E和多种矿物质，适合作为日常零食。</p>"
-                },
-                limai: {
-                    title: "藜麦",
-                    content: "<p><strong>地理位置：</strong>主要种植在中国西北地区，适合干燥的环境。</p><p><strong>营养价值：</strong>富含蛋白质、氨基酸、矿物质，是一种理想的超食品。</p>"
-                }
-            };
-
-            modalTitle.innerText = productDetails[product].title;
-            modalContent.innerHTML = productDetails[product].content;
-
-            document.getElementById('modal').classList.remove('hidden');
-        }
-
-        // 关闭模态框
-        function closeModal() {
-            document.getElementById('modal').classList.add('hidden');
-        }
+        // 可以使用其他JavaScript功能来扩展功能，比如打开模态框等
     </script>
-
 </body>
 </html>

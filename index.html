@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>源泽农业科技发展有限公司</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (思源宋体) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif SC', serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- 顶部导航 -->
+    <header class="bg-green-700 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">源泽农业科技发展有限公司</div>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="#home" class="hover:underline hover:text-gray-200">首页</a></li>
+                    <li><a href="#products" class="hover:underline hover:text-gray-200">产品</a></li>
+                    <li><a href="#about" class="hover:underline hover:text-gray-200">关于</a></li>
+                    <li><a href="#certificates" class="hover:underline hover:text-gray-200">证书</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏大图 -->
+    <section id="home" class="relative w-full h-screen bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/8332326/pexels-photo-8332326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="absolute inset-0 bg-black opacity-50 flex items-center justify-center text-white text-4xl font-bold">
+            <h1>源泽农业科技</h1>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products" class="py-12 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">我们的产品</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 小米 -->
+                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('xiaomi')">
+                    <!-- 替换小米图片链接 -->
+                    <img src="C:\Users\admin\Desktop\qqqqqq\xiaomi.jpg" alt="小米" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">小米</h3>
+                        <p class="text-gray-600">健康营养，口感独特，适合各类食谱。</p>
+                    </div>
+                </div>
+                <!-- 大米 -->
+                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('dami')">
+                    <!-- 替换大米图片链接 -->
+                    <img src="C:\Users\admin\Desktop\qqqqqq\dami.jpg" alt="大米" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">大米</h3>
+                        <p class="text-gray-600">富含淀粉，口感细腻，适合多种烹饪方式。</p>
+                    </div>
+                </div>
+                <!-- 大黄米 -->
+                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('dahuangmi')">
+                    <!-- 替换大黄米图片链接 -->
+                    <img src="C:\Users\admin\Desktop\qqqqqq\dahuangmi.jpg" alt="大黄米" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">大黄米</h3>
+                        <p class="text-gray-600">富含营养，适合粥类和蒸米饭。</p>
+                    </div>
+                </div>
+                <!-- 花生 -->
+                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('huasheng')">
+                    <!-- 替换花生图片链接 -->
+                    <img src="C:\Users\admin\Desktop\qqqqqq\huasheng.jpg" alt="花生" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">花生</h3>
+                        <p class="text-gray-600">富含植物脂肪，适合做零食或添加到菜肴中。</p>
+                    </div>
+                </div>
+                <!-- 瓜子 -->
+                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('guazi')">
+                    <!-- 替换瓜子图片链接 -->
+                    <img src="C:\Users\admin\Desktop\qqqqqq\guazi.jpg" alt="瓜子" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">瓜子</h3>
+                        <p class="text-gray-600">营养丰富，适合日常零食。</p>
+                    </div>
+                </div>
+                <!-- 藜麦 -->
+                <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('limai')">
+                    <!-- 替换藜麦图片链接 -->
+                    <img src="C:\Users\admin\Desktop\qqqqqq\limai.jpg" alt="藜麦" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">藜麦</h3>
+                        <p class="text-gray-600">高蛋白，富含氨基酸，是理想的超食品。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品详细介绍模态框 -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-lg w-full">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-xl text-gray-500">×</button>
+            <h3 id="modal-title" class="text-2xl font-semibold mb-4">产品详细介绍</h3>
+            <div id="modal-content">
+                <!-- 这里将动态填充产品的详细信息 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 证书部分 -->
+    <section id="certificates" class="py-12 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">我们的证书</h2>
+            <p class="text-lg text-gray-700">我们的产品已经通过了多项质量认证，并获得了业内的广泛认可。</p>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <footer class="bg-green-700 text-white p-6">
+        <div class="container mx-auto text-center">
+            <p class="text-lg">联系我们：<a href="mailto:contact@yuanzeng.com" class="hover:underline" id="email-copy">contact@yuanzeng.com</a></p>
+            <p class="text-sm mt-4">© 2025 源泽农业科技发展有限公司</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 打开模态框并填充内容
+        function openModal(product) {
+            let modalTitle = document.getElementById('modal-title');
+            let modalContent = document.getElementById('modal-content');
+            
+            const productDetails = {
+                xiaomi: {
+                    title: "小米",
+                    content: "<p><strong>地理位置：</strong>广泛种植于中国北方地区。</p><p><strong>营养价值：</strong>富含蛋白质、纤维

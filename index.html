@@ -13,6 +13,20 @@
             font-family: 'Noto Serif SC', serif;
         }
 
+         /* 固定顶部导航 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* 确保导航栏在页面内容之上 */
+        }
+
+        /* 给页面内容添加 padding-top 来避免被固定的导航栏遮挡 */
+        .content {
+            padding-top: 80px; /* 根据导航栏的高度设置适当的顶部间距 */
+        }
+        
         /* 动画：滑动图片并显示详细信息 */
         .product-card {
             position: relative;

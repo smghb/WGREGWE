@@ -45,7 +45,6 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 小米 -->
                 <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('xiaomi')">
-                    <!-- 替换小米图片链接 -->
                     <img src="xiaomi.jpg" alt="小米" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">小米</h3>
@@ -54,7 +53,6 @@
                 </div>
                 <!-- 大米 -->
                 <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('dami')">
-                    <!-- 替换大米图片链接 -->
                     <img src="dami.jpg" alt="大米" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">大米</h3>
@@ -63,7 +61,6 @@
                 </div>
                 <!-- 大黄米 -->
                 <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('dahuangmi')">
-                    <!-- 替换大黄米图片链接 -->
                     <img src="dahuangmi.jpg" alt="大黄米" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">大黄米</h3>
@@ -72,7 +69,6 @@
                 </div>
                 <!-- 花生 -->
                 <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('huasheng')">
-                    <!-- 替换花生图片链接 -->
                     <img src="huasheng.jpg" alt="花生" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">花生</h3>
@@ -81,7 +77,6 @@
                 </div>
                 <!-- 瓜子 -->
                 <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('guazi')">
-                    <!-- 替换瓜子图片链接 -->
                     <img src="guazi.jpg" alt="瓜子" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">瓜子</h3>
@@ -90,7 +85,6 @@
                 </div>
                 <!-- 藜麦 -->
                 <div class="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" onclick="openModal('limai')">
-                    <!-- 替换藜麦图片链接 -->
                     <img src="limai.jpg" alt="藜麦" class="w-full h-56 object-cover">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2">藜麦</h3>
@@ -138,4 +132,41 @@
             const productDetails = {
                 xiaomi: {
                     title: "小米",
-                    content: "<p><strong>地理位置：</strong>广泛种植于中国北方地区。</p><p><strong>营养价值：</strong>富含蛋白质、纤维
+                    content: "<p><strong>地理位置：</strong>广泛种植于中国北方地区。</p><p><strong>营养价值：</strong>富含蛋白质、纤维、矿物质和维生素。适合各种食谱，健康营养。</p>"
+                },
+                dami: {
+                    title: "大米",
+                    content: "<p><strong>地理位置：</strong>产自中国南方，适应温暖湿润的气候。</p><p><strong>营养价值：</strong>富含淀粉，提供丰富的能量。适合多种烹饪方式。</p>"
+                },
+                dahuangmi: {
+                    title: "大黄米",
+                    content: "<p><strong>地理位置：</strong>大黄米主要种植在中国东北地区。</p><p><strong>营养价值：</strong>富含矿物质、蛋白质，特别适合做粥和蒸米饭。</p>"
+                },
+                huasheng: {
+                    title: "花生",
+                    content: "<p><strong>地理位置：</strong>广泛种植于中国南方，阳光充足的环境中。</p><p><strong>营养价值：</strong>富含植物脂肪、蛋白质和多种维生素。可作为零食或添加到菜肴中。</p>"
+                },
+                guazi: {
+                    title: "瓜子",
+                    content: "<p><strong>地理位置：</strong>主要产于中国东北地区。</p><p><strong>营养价值：</strong>富含维生素E和多种矿物质，适合作为日常零食。</p>"
+                },
+                limai: {
+                    title: "藜麦",
+                    content: "<p><strong>地理位置：</strong>主要种植在中国西北地区，适合干燥的环境。</p><p><strong>营养价值：</strong>富含蛋白质、氨基酸、矿物质，是一种理想的超食品。</p>"
+                }
+            };
+
+            modalTitle.innerText = productDetails[product].title;
+            modalContent.innerHTML = productDetails[product].content;
+
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        // 关闭模态框
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>

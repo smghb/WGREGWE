@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 - 源泽农业科技发展有限公司</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .header { background: #4CAF50; padding: 15px; text-align: center; color: white; font-size: 20px; }
+    .nav { text-align: center; background: #333; padding: 10px; }
+    .nav a { color: white; text-decoration: none; padding: 10px 15px; display: inline-block; }
+    .nav a:hover { background: #575757; }
+    .container { width: 80%; margin: auto; padding: 20px; text-align: center; }
+    .contact-box { display: flex; justify-content: center; gap: 50px; margin: 20px 0; }
+    .contact-box div { text-align: center; }
+    .map-container { width: 100%; height: 400px; margin-top: 20px; }
+    .footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<div class="header">源泽农业科技发展有限公司</div>
+<div class="nav">
+    <a href="#">首页</a>
+    <a href="#">源泽农业</a>
+    <a href="#">技术荣耀</a>
+    <a href="#">产品服务</a>
+    <a href="#">新闻资讯</a>
+    <a href="#contact-us-6">联系我们</a>
+</div>
+
+<!-- 联系我们 -->
+<div class="container">
+    <h2>联系我们</h2>
+    <div class="contact-box">
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" width="40">
+            <p>吉林省 白城市 通榆县</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" width="40">
+            <p>0411-8280-8807</p>
+        </div>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="40">
+            <p>info@yanoagri.com</p>
+        </div>
+    </div>
+
+    <!-- 百度地图 -->
+    <h3>吉林省长春市南关区德正街道瑞幸咖啡(环球贸易中心A座店)环球贸易商务中心</h3>
+    <div class="map-container" id="allmap"></div>
+</div>
+
+<!-- 页脚 -->
+<div class="footer">
+    版权所有 © 2025 源泽农业科技发展有限公司 | 辽ICP备2022009401号-1
+</div>
+
+<!-- 百度地图 API -->
+<script>
+    function loadJScript() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://api.map.baidu.com/api?v=3.0&ak=AbyOheK56MGzaq61qRYhGz447GID3udz&callback=init";
+        document.body.appendChild(script);
+    }
+
+    function init() {
+        var map = new BMap.Map("allmap");
+        var point = new BMap.Point(121.46417, 38.974526);
+        map.centerAndZoom(point, 15);
+        map.enableScrollWheelZoom();
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+        var infoWindow = new BMap.InfoWindow("<b>源泽农业科技发展有限公司</b>");
+        map.openInfoWindow(infoWindow, point);
+    }
+
+    window.onload = loadJScript;
+</script>
+
+</body>
+</html>

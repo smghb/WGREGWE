@@ -6,71 +6,134 @@
     <title>新闻资讯 - 源泽农业科技</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Noto Serif SC', serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 20px;
-            animation: background-color-change 10s infinite alternate; /* 动态背景颜色 */
+            color: #fff;
         }
 
-        /* 动态背景颜色的CSS动画 */
-        @keyframes background-color-change {
-            0% {
-                background-color: #0066cc; /* 冷色1 - 蓝色 */
-            }
-            25% {
-                background-color: #4f6d7a; /* 冷色2 - 青蓝色 */
-            }
-            50% {
-                background-color: #4682b4; /* 冷色3 - 钢铁蓝 */
-            }
-            75% {
-                background-color: #5f4b8b; /* 冷色4 - 紫色 */
-            }
-            100% {
-                background-color: #2a4d70; /* 冷色5 - 深蓝 */
-            }
+        /* 整体背景色 */
+        header {
+            background-color: #c71c1c; /* 红色背景 */
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffcc00; /* 金色文字 */
+            border-bottom: 5px solid #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .news-section {
+            background-color: #d32f2f; /* 红色背景 */
+            padding: 50px 0;
         }
 
         h2 {
-            color: #fff; /* 标题文字颜色 */
+            font-size: 36px;
+            color: #ffcc00;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
         .news-list {
             list-style-type: none;
             padding: 0;
-            color: #fff;
         }
 
         .news-list li {
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 20px;
         }
 
         .news-list a {
             text-decoration: none;
-            color: #cce6ff; /* 链接颜色，冷色调 */
-            font-size: 18px;
+            color: #ffcc00;
+            background-color: #b71c1c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .news-list a:hover {
-            text-decoration: underline;
-            color: #80b3ff; /* 悬停时链接的颜色 */
+            background-color: #ffcc00;
+            color: #b71c1c;
+            transform: scale(1.05);
         }
 
-        p {
-            color: #fff;
+        .footer {
+            background-color: #c71c1c;
+            padding: 20px;
+            color: #ffcc00;
+            font-size: 14px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            margin-top: 50px;
+        }
+
+        /* 返回首页按钮 */
+        .back-to-home {
+            text-decoration: none;
+            color: #ffcc00;
+            background-color: #c71c1c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+            display: inline-block;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background-color: #ffcc00;
+            color: #c71c1c;
+            transform: scale(1.05);
+        }
+
+        /* 红星图案 */
+        .star-icon {
+            color: #ffcc00;
+            font-size: 50px;
+            margin: 10px;
+        }
+
+        .news-list li::before {
+            content: '★';
+            color: #ffcc00;
+            font-size: 30px;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h2>新闻资讯</h2>
-    <ul class="news-list">
-        <li><a href="https://example.com/news1" target="_blank">新闻标题 1</a></li>
-        <li><a href="https://example.com/news2" target="_blank">新闻标题 2</a></li>
-        <li><a href="https://example.com/news3" target="_blank">新闻标题 3</a></li>
-    </ul>
+    <!-- Header Section -->
+    <header>
+        <div>源泽农业科技发展有限公司</div>
+    </header>
 
-    <p><a href="index.html" style="color: #80b3ff;">返回首页</a></p>
+    <!-- News Section -->
+    <section class="news-section">
+        <h2>新闻资讯</h2>
+        <ul class="news-list">
+            <!-- 静态新闻链接 -->
+            <li><a href="https://example.com/news1" target="_blank">新闻标题 1</a></li>
+            <li><a href="https://example.com/news2" target="_blank">新闻标题 2</a></li>
+            <li><a href="https://example.com/news3" target="_blank">新闻标题 3</a></li>
+            <li><a href="https://example.com/news4" target="_blank">新闻标题 4</a></li>
+            <li><a href="https://example.com/news5" target="_blank">新闻标题 5</a></li>
+        </ul>
+
+        <p><a href="index.html" class="back-to-home">返回首页</a></p>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>版权所有 © 2025 源泽农业科技发展有限公司 | 辽ICP备2022009401号-1</p>
+        <div class="star-icon">★</div>
+        <div>社会主义核心价值观：富强、民主、文明、和谐、自由、平等、公正、法治</div>
+    </div>
 
 </body>
 </html>

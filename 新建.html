@@ -74,7 +74,7 @@
 <body class="bg-gray-100">
 
     <!-- 顶部导航 -->
-    <header class="bg-green-700 text-white p-4">
+    <header class="bg-green-700 text-white p-4 fixed w-full z-10">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">源泽农业科技发展有限公司</div>
             <nav>
@@ -83,6 +83,7 @@
                     <li><a href="#products" class="hover:underline hover:text-gray-200">产品</a></li>
                     <li><a href="#about" class="hover:underline hover:text-gray-200">关于</a></li>
                     <li><a href="#certificates" class="hover:underline hover:text-gray-200">证书</a></li>
+                    <li><a href="#contact" class="hover:underline hover:text-gray-200">联系我们</a></li>
                 </ul>
             </nav>
         </div>
@@ -177,14 +178,15 @@
         </div>
     </section>
 
-    <!-- JavaScript -->
-    <script>
-        // 可以使用其他JavaScript功能来扩展功能，比如打开模态框等
-    </script>
-</body>
-</html>
+    <!-- 关于我们 -->
+    <section id="about" class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">关于我们</h2>
+            <p class="text-lg text-gray-700">源泽农业科技发展有限公司致力于提供高质量的农产品，推动农业科技的发展。</p>
+        </div>
+    </section>
 
- <!-- 证书部分 -->
+    <!-- 证书展示 -->
     <section id="certificates" class="py-12 bg-white">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-6">我们的证书</h2>
@@ -193,9 +195,16 @@
     </section>
 
     <!-- 联系方式 -->
-    <footer class="bg-green-700 text-white p-6">
+    <footer id="contact" class="bg-green-700 text-white p-6">
         <div class="container mx-auto text-center">
-            <p class="text-lg">联系我们：<a href="mailto:contact@yuanzeng.com" class="hover:underline" id="email-copy">contact@yuanzeng.com</a></p>
+            <p class="text-lg">联系我们：<a href="mailto:contact@yuanzeng.com" class="hover:underline">contact@yuanzeng.com</a></p>
             <p class="text-sm mt-4">© 2025 源泽农业科技发展有限公司</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 可以使用其他JavaScript功能来扩展功能，比如打开模态框等
+    </script>
+</body>
+</html>
